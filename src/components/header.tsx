@@ -1,19 +1,19 @@
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
 import Container from "./ui/container";
-import { Search } from "lucide-react";
+import { Search, Menu } from "lucide-react";
 
 function Header() {
   return (
     <header className="py-4">
-      <Container className="flex items-center justify-between">
+      <Container className="flex flex-wrap items-center justify-between">
         <a className="flex items-center gap-2" href="#">
           <img className="size-6" src="./assets/vscode.svg" alt="vs code" />
           <span className="text-xl font-bold text-gray-700 dark:text-gray-300">
             Visual Studio Code
           </span>
         </a>
-        <nav>
+        <nav className="hidden md:block">
           <ul className="flex gap-4">
             <li>
               <a
@@ -73,7 +73,7 @@ function Header() {
             </li>
           </ul>
         </nav>
-        <div className="flex gap-2">
+        <div className="hidden gap-2 xl:flex">
           <ModeToggle />
           <label className="flex items-center gap-2 px-2 outline-1 outline-gray-300 outline-solid has-focus:outline-sky-700 dark:outline-gray-700">
             <Search size="18" />
@@ -87,6 +87,9 @@ function Header() {
             Download
           </Button>
         </div>
+        <button className="md:hidden">
+          <Menu />
+        </button>
       </Container>
     </header>
   );
