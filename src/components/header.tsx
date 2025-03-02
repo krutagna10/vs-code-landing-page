@@ -9,44 +9,65 @@ function Header() {
       <Container className="flex items-center justify-between">
         <a className="flex items-center gap-2" href="#">
           <img className="size-6" src="./assets/vscode.svg" alt="vs code" />
-          <span className="text-xl font-bold text-gray-300">
+          <span className="text-xl font-bold text-gray-700 dark:text-gray-300">
             Visual Studio Code
           </span>
         </a>
         <nav>
           <ul className="flex gap-4">
             <li>
-              <a className="text-gray-300 hover:text-white" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                href="#"
+              >
                 Docs
               </a>
             </li>
             <li>
-              <a className="text-gray-300 hover:text-white" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                href="#"
+              >
                 Updates
               </a>
             </li>
             <li>
-              <a className="text-gray-300 hover:text-white" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                href="#"
+              >
                 Blog
               </a>
             </li>
             <li>
-              <a className="text-gray-300 hover:text-white" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                href="#"
+              >
                 API
               </a>
             </li>
             <li>
-              <a className="text-gray-300 hover:text-white" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                href="#"
+              >
                 Extensions
               </a>
             </li>
             <li>
-              <a className="text-gray-300 hover:text-white" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                href="#"
+              >
                 FAQ
               </a>
             </li>
             <li>
-              <a className="text-gray-300 hover:text-white" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                href="#"
+              >
                 Github Copilot
               </a>
             </li>
@@ -54,7 +75,7 @@ function Header() {
         </nav>
         <div className="flex gap-2">
           <ModeToggle />
-          <label className="flex items-center gap-2 px-2 outline-1 outline-gray-700 has-focus:outline-sky-700">
+          <label className="flex items-center gap-2 px-2 outline-1 outline-gray-300 outline-solid has-focus:outline-sky-700 dark:outline-gray-700">
             <Search size="18" />
             <input
               type="search"
