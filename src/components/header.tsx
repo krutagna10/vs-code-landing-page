@@ -2,6 +2,8 @@ import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
 import Container from "./ui/container";
 import { Search, Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import navLinks from "@/constants/nav-links";
 
 function Header() {
   return (
@@ -15,62 +17,16 @@ function Header() {
         </a>
         <nav className="hidden md:block">
           <ul className="flex gap-4">
-            <li>
-              <a
-                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-                href="#"
-              >
-                Docs
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-                href="#"
-              >
-                Updates
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-                href="#"
-              >
-                Blog
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-                href="#"
-              >
-                API
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-                href="#"
-              >
-                Extensions
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-                href="#"
-              >
-                FAQ
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-                href="#"
-              >
-                Github Copilot
-              </a>
-            </li>
+            {navLinks.map((navLink, index) => (
+              <li key={index}>
+                <a
+                  className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                  href={navLink.href}
+                >
+                  {navLink.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
         <div className="hidden gap-2 xl:flex">
@@ -87,9 +43,24 @@ function Header() {
             Download
           </Button>
         </div>
-        <button className="md:hidden">
-          <Menu />
-        </button>
+        <Sheet>
+          <SheetTrigger>
+            <Menu />
+          </SheetTrigger>
+          <SheetContent>
+            <nav>
+              <ul className="flex min-h-screen flex-col justify-center gap-6 pl-6">
+                {navLinks.map((navLink, index) => (
+                  <li>
+                    <a key={index} href={navLink.href}>
+                      {navLink.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </Container>
     </header>
   );
