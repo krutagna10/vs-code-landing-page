@@ -1,9 +1,9 @@
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
 import Container from "./ui/container";
-import { Search, Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Search } from "lucide-react";
 import navLinks from "@/constants/nav-links";
+import MobileNavigation from "./mobile-navigation";
 
 function Header() {
   return (
@@ -43,24 +43,7 @@ function Header() {
             Download
           </Button>
         </div>
-        <Sheet>
-          <SheetTrigger>
-            <Menu />
-          </SheetTrigger>
-          <SheetContent>
-            <nav>
-              <ul className="flex min-h-screen flex-col justify-center gap-6 pl-6">
-                {navLinks.map((navLink, index) => (
-                  <li>
-                    <a key={index} href={navLink.href}>
-                      {navLink.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </SheetContent>
-        </Sheet>
+        <MobileNavigation />
       </Container>
     </header>
   );
