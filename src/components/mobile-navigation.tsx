@@ -13,10 +13,8 @@ function MobileNavigation() {
           <nav>
             <ul className="flex min-h-screen flex-col justify-center gap-6 pl-6">
               {navLinks.map((navLink, index) => (
-                <li>
-                  <a key={index} href={navLink.href}>
-                    {navLink.name}
-                  </a>
+                <li key={index}>
+                  <a href={navLink.href}>{navLink.name}</a>
                 </li>
               ))}
             </ul>
