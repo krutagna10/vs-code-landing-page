@@ -2,18 +2,15 @@ import Container from "./ui/container";
 import { ArrowDownToLine } from "lucide-react";
 import { Button } from "./ui/button";
 import { useTheme } from "@/context/theme-provider";
-import heroLight from "../../public/assets/hero-light-lg.webm";
-import heroDark from "../../public/assets/hero-dark-lg.webm";
 
 function Hero() {
   const { theme } = useTheme();
-  console.log(theme);
 
   return (
     <section className="py-12">
       <Container className="space-y-6">
         <div className="space-y-4">
-          <h1 className="text-center text-6xl font-bold">
+          <h1 className="text-center text-4xl font-bold md:text-6xl">
             <span className="block">Your code editor.</span>
             <span className="block">Redefined with AI.</span>
           </h1>
@@ -44,17 +41,22 @@ function Hero() {
             </a>
           </p>
         </div>
-        <div className="rounded-md bg-[url(./assets/hero-light.webp)] p-4">
-          <video autoPlay muted>
-            <source
-              src={
-                theme === "light"
-                  ? "./assets/hero-light-lg.webm"
-                  : "./assets/hero-dark-lg.webm"
-              }
-              type="video/webm"
-            />
-          </video>
+        <div className="space-y-2">
+          <div className="rounded-md bg-[url(./assets/hero-light.webp)] p-4">
+            <video autoPlay muted controls>
+              <source
+                src={
+                  theme === "light"
+                    ? "./assets/hero-light-lg.webm"
+                    : "./assets/hero-dark-lg.webm"
+                }
+                type="video/webm"
+              />
+            </video>
+          </div>
+          <div className="flex justify-center">
+            <button>Replay</button>
+          </div>
         </div>
       </Container>
     </section>
