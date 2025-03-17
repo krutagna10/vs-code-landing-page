@@ -1,10 +1,31 @@
+import { useState, useRef } from "react";
 import Container from "./ui/container";
-import { ArrowDownToLine } from "lucide-react";
 import { Button } from "./ui/button";
 import { useTheme } from "@/context/theme-provider";
+import { ArrowDownToLine } from "lucide-react";
+
+interface Playback {
+  state: "playing" | "paused" | "ended";
+  text: "Pause" | "Play" | "Replay";
+}
 
 function Hero() {
   const { theme } = useTheme();
+  const videoRef = useRef<null | HTMLVideoElement>(null);
+  const [playback, setPlayback] = useState<Playback>({
+    state: "playing",
+    text: "Pause",
+  });
+
+  function handlePlayingStateChange() {
+    if (playback.state === "playing") {
+      videoRef.current?.pause();
+      setPlayback({ state: "paused", text: "Play" });
+    } else {
+      videoRef.current?.play();
+      setPlayback({ state: "playing", text: "Pause" });
+    }
+  }
 
   return (
     <section className="py-12">
@@ -43,7 +64,15 @@ function Hero() {
         </div>
         <div className="space-y-2">
           <div className="rounded-md bg-[url(./assets/hero-light.webp)] p-4">
-            <video autoPlay muted controls>
+            <video
+              id="hero-video"
+              ref={videoRef}
+              autoPlay
+              muted
+              onEnded={() => {
+                setPlayback({ state: "ended", text: "Replay" });
+              }}
+            >
               <source
                 src={
                   theme === "light"
@@ -55,7 +84,13 @@ function Hero() {
             </video>
           </div>
           <div className="flex justify-center">
-            <button>Replay</button>
+            <button
+              aria-controls="hero-video"
+              className="cursor-pointer"
+              onClick={handlePlayingStateChange}
+            >
+              {playback.text}
+            </button>
           </div>
         </div>
       </Container>
