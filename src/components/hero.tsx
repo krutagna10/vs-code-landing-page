@@ -63,9 +63,10 @@ function Hero() {
           </p>
         </div>
         <div className="space-y-2">
-          <div className="rounded-md bg-[url(./assets/hero-light.webp)] p-4">
+          <div className="rounded-md bg-[url(./assets/hero/hero-light.webp)] p-4">
             <video
               id="hero-video"
+              key={theme}
               ref={videoRef}
               autoPlay
               muted
@@ -76,8 +77,8 @@ function Hero() {
               <source
                 src={
                   theme === "light"
-                    ? "./assets/hero-light-lg.webm"
-                    : "./assets/hero-dark-lg.webm"
+                    ? "./assets/hero/hero-light-lg.webm"
+                    : "./assets/hero/hero-dark-lg.webm"
                 }
                 type="video/webm"
               />

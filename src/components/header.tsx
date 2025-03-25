@@ -10,7 +10,11 @@ function Header() {
     <header className="py-4">
       <Container className="flex flex-wrap items-center justify-between">
         <a className="flex items-center gap-2" href="#">
-          <img className="size-6" src="./assets/vscode.svg" alt="vs code" />
+          <img
+            className="size-6"
+            src="./assets/header/vscode.svg"
+            alt="vs code"
+          />
           <span className="text-xl font-bold text-gray-700 dark:text-gray-300">
             Visual Studio Code
           </span>

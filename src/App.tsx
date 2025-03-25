@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@/context/theme-provider";
 import Header from "./components/header";
 import Hero from "./components/hero";
+import CopilotCustomization from "./components/copilot-customization";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <CopilotCustomization />
       </main>
     </ThemeProvider>
   );
