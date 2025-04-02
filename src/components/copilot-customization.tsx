@@ -11,7 +11,7 @@ function CopilotCustomization() {
         {customizations.map((customization, index) => (
           <div
             key={index}
-            className="space-y-2 rounded-md border-1 border-gray-200 bg-white/5 p-4"
+            className="space-y-2 rounded-md border-1 border-gray-200 bg-white/5 p-4 dark:border-gray-700"
           >
             <div className="space-y-2">
               <h2 className="text-xl">{customization.title}</h2>
