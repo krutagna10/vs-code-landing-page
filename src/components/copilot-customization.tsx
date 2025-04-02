@@ -14,6 +14,7 @@ function CopilotCustomization() {
             <img src={customization.imageDark} />
           </div>
         ))}
+        <p>hghghghgh</p>
       </Container>
     </section>
   );
