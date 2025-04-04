@@ -15,8 +15,8 @@ const customizations: Customization[] = [
     description:
       "Copilot locally indexes your codebase to understand what’s relevant and supplements that context to interactions with Copilot.",
     image: {
-      light: "./assets/copilot-customization/instructions-light.webp",
-      dark: "./assets/copilot-customization/instructions-dark.webp",
+      light: "./assets/copilot-customization/multi-file-light.webp",
+      dark: "./assets/copilot-customization/multi-file-dark.webp",
     },
   },
   {
@@ -24,8 +24,8 @@ const customizations: Customization[] = [
     description:
       "Copilot works the way you do. Customize Copilot's prompts with details about your team's workflows, tools, and projects.",
     image: {
-      light: "./assets/copilot-customization/multi-file-light.webp",
-      dark: "./assets/copilot-customization/multi-file-dark.webp",
+      light: "./assets/copilot-customization/instructions-light.webp",
+      dark: "./assets/copilot-customization/instructions-dark.webp",
     },
   },
 ];
