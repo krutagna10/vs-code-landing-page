@@ -2,6 +2,7 @@ import { ThemeProvider } from "@/context/theme-provider";
 import Header from "./components/header";
 import Hero from "./components/hero";
 import CopilotCustomization from "./components/copilot-customization";
+import AiFeatures from "./components/ai-features";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <main>
         <Hero />
         <CopilotCustomization />
+        <AiFeatures />
       </main>
     </ThemeProvider>
   );
