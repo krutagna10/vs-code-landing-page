@@ -1,10 +1,7 @@
-import { useTheme } from "@/context/theme-provider";
 import Container from "./ui/container";
 import { Button } from "./ui/button";
 
 function AiFeatures() {
-  const { theme } = useTheme();
-
   return (
     <section className="py-12">
       <Container>
